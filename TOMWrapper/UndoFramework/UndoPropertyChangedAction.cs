@@ -139,6 +139,7 @@ namespace TabularEditor.TOMWrapper.Undo
             this.objectType = wrapperObject.GetType();
             this.prop = objectType.GetProperty(propertyName);
             this.index = index;
+            this.codePath = (wrapperObject as TabularObject)?.GetObjectPath() ?? wrapperObject?.ToString();
             this.ActionName = GetActionNameFromProperty(propertyName);
         }
 

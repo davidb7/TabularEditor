@@ -438,10 +438,10 @@ namespace TabularEditor.UI.Dialogs.Pages
             TypedDataSource = dataSource;
         }
 
-        public event EventHandler<TreeModelEventArgs> NodesChanged;
-        public event EventHandler<TreeModelEventArgs> NodesInserted;
-        public event EventHandler<TreeModelEventArgs> NodesRemoved;
-        public event EventHandler<TreePathEventArgs> StructureChanged;
+        public event EventHandler<TreeModelEventArgs> NodesChanged { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesInserted { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesRemoved { add { } remove { } }
+        public event EventHandler<TreePathEventArgs> StructureChanged { add { } remove { } }
 
         public IEnumerable GetChildren(TreePath treePath)
         {

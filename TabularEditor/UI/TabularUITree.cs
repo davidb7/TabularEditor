@@ -461,7 +461,7 @@ namespace TabularEditor
         public event EventHandler<TreeModelEventArgs> NodesChanged;
         public event EventHandler<TreeModelEventArgs> NodesInserted;
         public event EventHandler<TreeModelEventArgs> NodesRemoved;
-        public event EventHandler<TreePathEventArgs> StructureChanged;
+        public new event EventHandler<TreePathEventArgs> StructureChanged;
 
         public TreePath GetPath(ITabularObject item)
         {

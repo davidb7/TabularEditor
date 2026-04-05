@@ -201,7 +201,7 @@ namespace TabularEditor.TOMWrapper
 
         private string _path;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged { add { } remove { } }
 
         [ReadOnly(true)]
         public string Path {

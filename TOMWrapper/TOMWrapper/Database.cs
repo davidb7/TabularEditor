@@ -233,8 +233,6 @@ namespace TabularEditor.TOMWrapper
             return true;
         }
 
-        private int _compatibilityLevel;
-
         [DisplayName("Compatibility Level")]
         public int CompatibilityLevel
         {
