@@ -59,13 +59,13 @@ namespace TabularEditor
         {
             RemoveService(serviceType, false);
         }
-        public event EventHandler Activated;
-        public event EventHandler Deactivated;
-        public event EventHandler LoadComplete;
-        public event DesignerTransactionCloseEventHandler TransactionClosed;
-        public event DesignerTransactionCloseEventHandler TransactionClosing;
-        public event EventHandler TransactionOpened;
-        public event EventHandler TransactionOpening;
+        public event EventHandler Activated { add { } remove { } }
+        public event EventHandler Deactivated { add { } remove { } }
+        public event EventHandler LoadComplete { add { } remove { } }
+        public event DesignerTransactionCloseEventHandler TransactionClosed { add { } remove { } }
+        public event DesignerTransactionCloseEventHandler TransactionClosing { add { } remove { } }
+        public event EventHandler TransactionOpened { add { } remove { } }
+        public event EventHandler TransactionOpening { add { } remove { } }
         #endregion
 
         public object GetService(Type serviceType)

@@ -67,7 +67,7 @@ namespace TabularEditor.TOMWrapper
         public TranslationIndexer TranslatedNames { get { return null; } }
         public ObjectType ObjectType { get { return ObjectType.Group; } }
         public Model Model { get { return TabularModelHandler.Singleton.Model; } }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged { add { } remove { } }
 
         public bool IsRemoved => false;
 

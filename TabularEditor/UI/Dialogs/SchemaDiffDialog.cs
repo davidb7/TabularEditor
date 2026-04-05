@@ -245,10 +245,10 @@ namespace TabularEditor.UI
 
     public class MetadataChangeModel : ITreeModel
     {
-        public event EventHandler<TreeModelEventArgs> NodesChanged;
-        public event EventHandler<TreeModelEventArgs> NodesInserted;
-        public event EventHandler<TreeModelEventArgs> NodesRemoved;
-        public event EventHandler<TreePathEventArgs> StructureChanged;
+        public event EventHandler<TreeModelEventArgs> NodesChanged { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesInserted { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesRemoved { add { } remove { } }
+        public event EventHandler<TreePathEventArgs> StructureChanged { add { } remove { } }
 
         public readonly Dictionary<Change, List<Change>> TableChanges;
 

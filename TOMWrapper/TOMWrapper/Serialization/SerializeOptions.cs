@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 using TOM = Microsoft.AnalysisServices.Tabular;
 
 namespace TabularEditor.TOMWrapper.Serialization
@@ -108,6 +109,39 @@ namespace TabularEditor.TOMWrapper.Serialization
         public override bool Equals(object obj)
         {
             return Equals(obj as SerializeOptions);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = 17;
+                hash = (hash * 23) + IgnoreInferredObjects.GetHashCode();
+                hash = (hash * 23) + IgnoreInferredProperties.GetHashCode();
+                hash = (hash * 23) + IgnoreTimestamps.GetHashCode();
+                hash = (hash * 23) + IgnoreLineageTags.GetHashCode();
+                hash = (hash * 23) + SplitMultilineStrings.GetHashCode();
+                hash = (hash * 23) + IgnorePrivacySettings.GetHashCode();
+                hash = (hash * 23) + IgnoreIncrementalRefreshPartitions.GetHashCode();
+                hash = (hash * 23) + PrefixFilenames.GetHashCode();
+                hash = (hash * 23) + AlsoSaveAsBim.GetHashCode();
+                hash = (hash * 23) + LocalTranslations.GetHashCode();
+                hash = (hash * 23) + LocalPerspectives.GetHashCode();
+                hash = (hash * 23) + SortArrays.GetHashCode();
+                hash = (hash * 23) + LocalRelationships.GetHashCode();
+                hash = (hash * 23) + IncludeSensitive.GetHashCode();
+                hash = (hash * 23) + (TmdlOptions?.GetHashCode() ?? 0);
+                hash = (hash * 23) + (Levels?.Count ?? 0);
+                if (Levels != null)
+                {
+                    foreach (var level in Levels.OrderBy(l => l, System.StringComparer.Ordinal))
+                    {
+                        hash = (hash * 23) + (level?.GetHashCode() ?? 0);
+                    }
+                }
+
+                return hash;
+            }
         }
 
         public static bool operator== (SerializeOptions obj1, SerializeOptions obj2)

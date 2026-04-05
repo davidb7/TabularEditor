@@ -349,9 +349,9 @@ namespace TabularEditor.BestPracticeAnalyzer
 
     class RuleDefinitionsTreeModel : ITreeModel
     {
-        public event EventHandler<TreeModelEventArgs> NodesChanged;
-        public event EventHandler<TreeModelEventArgs> NodesInserted;
-        public event EventHandler<TreeModelEventArgs> NodesRemoved;
+        public event EventHandler<TreeModelEventArgs> NodesChanged { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesInserted { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesRemoved { add { } remove { } }
         public event EventHandler<TreePathEventArgs> StructureChanged;
 
         Analyzer analyzer;
@@ -394,9 +394,9 @@ namespace TabularEditor.BestPracticeAnalyzer
 
     class RulesTreeModel : ITreeModel
     {
-        public event EventHandler<TreeModelEventArgs> NodesChanged;
-        public event EventHandler<TreeModelEventArgs> NodesInserted;
-        public event EventHandler<TreeModelEventArgs> NodesRemoved;
+        public event EventHandler<TreeModelEventArgs> NodesChanged { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesInserted { add { } remove { } }
+        public event EventHandler<TreeModelEventArgs> NodesRemoved { add { } remove { } }
         public event EventHandler<TreePathEventArgs> StructureChanged;
 
         IEnumerable<BestPracticeRule> rules = Enumerable.Empty<BestPracticeRule>();

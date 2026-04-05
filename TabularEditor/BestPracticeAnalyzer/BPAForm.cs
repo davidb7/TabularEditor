@@ -17,9 +17,6 @@ namespace TabularEditor.UI.Dialogs
 {
     public partial class BPAForm : Form
     {
-        ListViewGroup lvgLocal;
-        ListViewGroup lvgGlobal;
-
         public Analyzer Analyzer { get; private set; }
 
         public Dictionary<string, BestPracticeRule> RuleIndex = new Dictionary<string, BestPracticeRule>();

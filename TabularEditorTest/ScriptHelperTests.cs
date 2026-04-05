@@ -13,6 +13,7 @@ namespace TabularEditor
     public class ScriptHelperTests
     {
         [TestMethod]
+        [Obsolete]
         public void FormatDaxDeprecatedTest()
         {
             var mockFormatter = new Mock<IDaxFormatterProxy>();

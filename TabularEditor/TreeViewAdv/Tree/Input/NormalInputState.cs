@@ -7,8 +7,6 @@ namespace Aga.Controls.Tree
 {
 	internal class NormalInputState : InputState
 	{
-		private bool _mouseDownFlag = false;
-
 		public NormalInputState(TreeViewAdv tree) : base(tree)
 		{
 		}
@@ -98,13 +96,7 @@ namespace Aga.Controls.Tree
 					try
 					{
 						Tree.CurrentNode = args.Node;
-						if (args.Node.IsSelected)
-							_mouseDownFlag = true;
-						else
-						{
-							_mouseDownFlag = false;
-							DoMouseOperation(args, args.Button == MouseButtons.Left);
-						}
+						DoMouseOperation(args, args.Button == MouseButtons.Left);
 					}
 					finally
 					{
@@ -130,7 +122,6 @@ namespace Aga.Controls.Tree
 				else if (args.Button == MouseButtons.Right)
 					Tree.CurrentNode = args.Node;
 			}
-			_mouseDownFlag = false;
 		}
 
 
